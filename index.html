@@ -49,7 +49,7 @@
     </center>
   </div>
 
-<canvas id="gameCanvas"></canvas>
+<canvas onClick="launch_do()" id="gameCanvas"></canvas>
 
 <script src="gradient.js"></script>
 <script src="rocket_animation.js"></script>
@@ -235,12 +235,19 @@
   <!-- key handlers-->
   <script>
 
-    document.addEventListener('keydown', onkey);
-    function onkey(e){
-      if(e.key == ' ' && get_base()==1){
+    function launch_do(){
+
+      if(get_base()==1){
         start_flying();
         if(document.getElementById("welcome") != null)
           document.getElementById("welcome").remove();
+      }
+    }
+      
+    document.addEventListener('keydown', onkey);
+    function onkey(e){
+      if(e.key == ' '){
+        launch_do();
       }
 
       if(e.key == 'r')
