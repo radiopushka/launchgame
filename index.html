@@ -102,8 +102,10 @@
     var down_correction=0;
     var right_correction=0;
 
-    var star_opacity=darkness/(510);
+    var star_opacity=darkness/(255);
 
+    if(star_opacity>1)
+        star_opacity=1;
 
       if(downmove<height){
 
